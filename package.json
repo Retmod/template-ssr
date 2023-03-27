@@ -5,7 +5,10 @@
 	"main": "index.js",
 	"scripts": {
 		"base:server": "webpack -c ./.retmod/config/webpack.config.server.ts",
-		"dev:server": "pnpm base:server --mode development --watch"
+		"base:client": "webpack -c ./.retmod/config/webpack.config.client.ts",
+		"dev:server": "pnpm base:server --mode development --watch",
+		"dev:client": "pnpm base:client --mode development --watch",
+		"dev": "concurrently \"pnpm dev:server\" \"pnpm dev:client\""
 	},
 	"keywords": [],
 	"author": "",
@@ -22,7 +25,6 @@
 		"esbuild-loader": "^3.0.1",
 		"express": "^4.18.2",
 		"html-webpack-plugin": "^5.5.0",
-		"nodemon": "^2.0.22",
 		"postcss": "^8.4.21",
 		"postcss-loader": "^7.1.0",
 		"prisma": "^4.11.0",
@@ -40,7 +42,6 @@
 		"url": "^0.11.0",
 		"url-loader": "^4.1.1",
 		"webpack": "^5.76.2",
-		"webpack-cli": "^5.0.1",
-		"webpack-shell-plugin-next": "^2.3.1"
+		"webpack-cli": "^5.0.1"
 	}
 }
