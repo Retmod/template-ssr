@@ -5,6 +5,7 @@ import express from 'express';
 import path from 'path';
 import React, { Suspense } from 'react';
 import { readFile } from 'fs/promises';
+import mongo from 'mongoose';
 
 interface Middleware {
 	(
@@ -13,6 +14,8 @@ interface Middleware {
 		next: express.NextFunction,
 	): void;
 }
+
+mongo.connect('mongodb://localhost:27017/test');
 
 const app = express();
 
